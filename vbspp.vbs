@@ -42,7 +42,7 @@ Function mbox(text, icon, title)
 End Function
 
 Function err(text, title)
-    Dim htmlFile(6)
+    Dim htmlFile(8)
     htmlFile(0) = "<html>"
     htmlFile(1) = "<head>"
     htmlFile(2) = "<title>An Error Occured: "& title &"</title>"
