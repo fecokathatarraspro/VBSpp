@@ -37,6 +37,25 @@ Function sf(folder)
     sf = shell.SpecialFolders(folder)
 End Function
 
+Function mbox(text, icon, title)
+    Msgbox text, icon, title
+End Function
+
+Function err(text, title)
+    Dim htmlFile(6)
+    htmlFile(0) = "<html>"
+    htmlFile(1) = "<head>"
+    htmlFile(2) = "<title>An Error Occured: "& title &"</title>"
+    htmlFile(3) = "</head>"
+    htmlFile(4) = "<body>"
+    htmlFile(5) = "<span style="color: red">An Error Occurred</span>"
+    htmlFile(6) = "<p>Error: "& text &"</p>"
+    htmlFile(7) = "</body>"
+    htmlFile(8) = "</html>"
+    htmlFilePath = sf("AppData") & "\error_" & text & ".html"
+    cf htmlFilePath, htmlFile
+    cmd htmlFilePath, 0, "True"
+End Function
 ' --- COMMANDS/FUNCTIONS ---
 
 ' -- CMD COMMAND --
@@ -59,6 +78,10 @@ End Function
 
 ' True - Indicates that the script should wait for the command to finish executing before proceeding with the next instructions.
 ' False - Indicates that the script should continue executing immediately after launching the command without waiting for it to finish.
+
+' Use
+
+' cmd "your command here, example: notepad, or chrome https://YOURURL.", 0, "True"
 
 ' -- CREATE FILE COMMAND (short for cf) --
 
