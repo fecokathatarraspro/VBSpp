@@ -20,7 +20,7 @@ End Function
 
 Function cf(filePath, list)
     If objFSO.FileExists(filePath) Then
-        objFSO DeleteFile(filePath)
+        objFSO.DeleteFile(filePath)
     End If
     
     Set objFile = objFSO.CreateTextFile(filePath)
