@@ -10,12 +10,12 @@ Set shell = CreateObject("WScript.Shell")
 
 Set objFSO = CreateObject("Scripting.FileSystemObject")
 
-Function cmd(cmd, num, invis)
-    shell.run cmd, num, invis
+Function cmd(command, number, invisible)
+    shell.run command, number, invisible
 End Function
 
-Function cmdadmin(command, numb, invisi)
-    shell.run "runas /noprofile /user:Administrator """ & command & """", numb, invisi
+Function cmdadmin(command2, number2, invisible2)
+    shell.run "runas /noprofile /user:Administrator """ & command2 & """", number2, invisible2
 End Function
 
 Function cf(filePath, list)
