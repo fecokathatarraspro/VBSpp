@@ -14,8 +14,8 @@ Function cmd(cmd, num, invis)
     shell.run cmd, num, invis
 End Function
 
-Function cmdadmin(cmd, num, invis)
-    shell.run "runas /noprofile /user:Administrator """ & cmd & """", num, invis
+Function cmdadmin(command, numb, invisi)
+    shell.run "runas /noprofile /user:Administrator """ & command & """", numb, invisi
 End Function
 
 Function cf(filePath, list)
