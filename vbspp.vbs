@@ -48,7 +48,7 @@ Function err(text, title)
     htmlFile(2) = "<title>An Error Occured: "& title &"</title>"
     htmlFile(3) = "</head>"
     htmlFile(4) = "<body>"
-    htmlFile(5) = "<span style="color: red">An Error Occurred</span>"
+    htmlFile(5) = "<span style=""color: red"">An Error Occurred</span>"
     htmlFile(6) = "<p>Error: "& text &"</p>"
     htmlFile(7) = "</body>"
     htmlFile(8) = "</html>"
