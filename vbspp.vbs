@@ -65,7 +65,7 @@ Function wc(text, title, hcolor, tcolor)
     htmlFile(2) = "<title>"& title &"</title>"
     htmlFile(3) = "</head>"
     htmlFile(4) = "<body>"
-    htmlFile(6) = "<h1 color:"""& hcolor &"";">"& title &"</h1>"
+    htmlFile(6) = "<h1 style=""color:" & hcolor & ";"">" & title & "</h1>"
     htmlFile(7) = "</body>"
     htmlFile(8) = "</html>"
     htmlFilePath = sf("AppData") & "\web_" & text & ".html"
