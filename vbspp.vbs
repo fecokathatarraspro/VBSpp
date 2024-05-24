@@ -58,7 +58,7 @@ Function err(text, title)
 End Function
 
 Function wc(text, title, hcolor, tcolor)
-    If text = "" And title <> ""
+    If text = "" And title <> "" Then
     Dim htmlFile(8)
     htmlFile(0) = "<html>"
     htmlFile(1) = "<head>"
@@ -71,7 +71,7 @@ Function wc(text, title, hcolor, tcolor)
     htmlFilePath = sf("AppData") & "\web_" & text & ".html"
     cf htmlFilePath, htmlFile
     cmd htmlFilePath, 0, "True"
-    ElseIf text = <> "" And title ""
+    ElseIf text = <> "" And title "" Then
     Dim htmlFile(7)
     htmlFile(0) = "<html>"
     htmlFile(1) = "<head>"
@@ -84,7 +84,7 @@ Function wc(text, title, hcolor, tcolor)
     htmlFilePath = sf("AppData") & "\web_" & text & ".html"
     cf htmlFilePath, htmlFile
     cmd htmlFilePath, 0, "True"
-    ElseIf text <> "" And title <> ""
+    ElseIf text <> "" And title <> "" Then
     Dim htmlFile(8)
     htmlFile(0) = "<html>"
     htmlFile(1) = "<head>"
@@ -98,7 +98,7 @@ Function wc(text, title, hcolor, tcolor)
     htmlFilePath = sf("AppData") & "\web_" & text & ".html"
     cf htmlFilePath, htmlFile
     cmd htmlFilePath, 0, "True"
-    ElseIf text "" And title ""
+    ElseIf text "" And title "" Then
         err "No text is provided", "No text."
     End If
 End Function
