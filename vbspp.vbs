@@ -59,7 +59,7 @@ End Function
 
 Function wc(text, title, hcolor, tcolor)
     If text = "" And title <> "" Then
-        Dim htmlFile(8)
+        Dim htmlFile(7)
         htmlFile(0) = "<html>"
         htmlFile(1) = "<head>"
         htmlFile(2) = "<title>" & title & "</title>"
