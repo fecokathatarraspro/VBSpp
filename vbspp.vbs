@@ -58,8 +58,8 @@ Function err(text, title)
 End Function
 
 Function wc(text, title, hcolor, tcolor)
+    Dim htmlFile(8)
     If text = "" And title <> "" Then
-        Dim htmlFile(7)
         htmlFile(0) = "<html>"
         htmlFile(1) = "<head>"
         htmlFile(2) = "<title>" & title & "</title>"
@@ -72,7 +72,6 @@ Function wc(text, title, hcolor, tcolor)
         cf htmlFilePath, htmlFile
         cmd htmlFilePath, 0, "True"
     ElseIf text <> "" And title <> "" Then
-        Dim htmlFile(8)
         htmlFile(0) = "<html>"
         htmlFile(1) = "<head>"
         htmlFile(2) = "<title>" & title & "</title>"
@@ -86,7 +85,6 @@ Function wc(text, title, hcolor, tcolor)
         cf htmlFilePath, htmlFile
         cmd htmlFilePath, 0, "True"
     ElseIf text <> "" And title = "" Then
-        Dim htmlFile(7)
         htmlFile(0) = "<html>"
         htmlFile(1) = "<head>"
         htmlFile(2) = "<title>No Title</title>"
