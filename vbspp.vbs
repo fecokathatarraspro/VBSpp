@@ -49,12 +49,58 @@ Function err(text, title)
     htmlFile(3) = "</head>"
     htmlFile(4) = "<body>"
     htmlFile(5) = "<span style=""color: red"">An Error Occurred</span>"
-    htmlFile(6) = "<p>Error: "& text &"</p>"
+    htmlFile(6) = "<p>Error: "& text &".</p>"
     htmlFile(7) = "</body>"
     htmlFile(8) = "</html>"
     htmlFilePath = sf("AppData") & "\error_" & text & ".html"
     cf htmlFilePath, htmlFile
     cmd htmlFilePath, 0, "True"
+End Function
+
+Function wc(text, title, hcolor, tcolor)
+    If text = "" And title <> ""
+    Dim htmlFile(8)
+    htmlFile(0) = "<html>"
+    htmlFile(1) = "<head>"
+    htmlFile(2) = "<title>"& title &"</title>"
+    htmlFile(3) = "</head>"
+    htmlFile(4) = "<body>"
+    htmlFile(6) = "<h1 color:"""& hcolor &"";">"& title &"</h1>"
+    htmlFile(7) = "</body>"
+    htmlFile(8) = "</html>"
+    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+    cf htmlFilePath, htmlFile
+    cmd htmlFilePath, 0, "True"
+    ElseIf text = <> "" And title ""
+    Dim htmlFile(7)
+    htmlFile(0) = "<html>"
+    htmlFile(1) = "<head>"
+    htmlFile(2) = "<title>No Title</title>"
+    htmlFile(3) = "</head>"
+    htmlFile(4) = "<body>"
+    htmlFile(5) = "<p color:"""& tcolor &";"">"& text &"</p>"
+    htmlFile(6) = "</body>"
+    htmlFile(7) = "</html>"
+    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+    cf htmlFilePath, htmlFile
+    cmd htmlFilePath, 0, "True"
+    ElseIf text <> "" And title <> ""
+    Dim htmlFile(8)
+    htmlFile(0) = "<html>"
+    htmlFile(1) = "<head>"
+    htmlFile(2) = "<title>"& title &"</title>"
+    htmlFile(3) = "</head>"
+    htmlFile(4) = "<body>"
+    htmlFile(5) = "<h1 color:"""& hcolor &"";">"& title &"</h1>"
+    htmlFile(6) = "<p color:"""& tcolor &";"">"& text &"</p>"
+    htmlFile(7) = "</body>"
+    htmlFile(8) = "</html>"
+    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+    cf htmlFilePath, htmlFile
+    cmd htmlFilePath, 0, "True"
+    ElseIf text "" And title ""
+        err "No text is provided", "No text."
+    End If
 End Function
 ' --- COMMANDS/FUNCTIONS ---
 
@@ -111,6 +157,34 @@ End Function
 ' Use
 
 ' YOURVARWITHDIRECTORY = sf("YOUR FOLDER, example: Desktop")
+
+' -- ERROR COMMAND (short for err) --
+
+' First Parameter
+
+' It's like a wc command, but an error, It's useful for an error in your program. This is the text parameter, it's for the error message.
+
+' Second Parameter
+
+' Same as the text Parameter, but it's the title.
+
+' Use
+
+' err "YOURERROR", "YOURERRORTITLE"
+
+' -- WEBSITE CREATE COMMAND (short for wc) --
+
+' First Parameter
+
+' It creates a web page with a Header, and a Text, This parameter is used for the header of the Web Page
+
+' Second Parameter
+
+' Same as the text Parameter, but it's the title.
+
+' Use
+
+' err "YOURERROR", "YOURERRORTITLE"
 
 ' ---YOUR CODE HERE---
 
