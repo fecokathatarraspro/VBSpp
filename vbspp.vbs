@@ -180,7 +180,15 @@ End Function
 
 ' Second Parameter
 
-' Same as the text Parameter, but it's the title.
+' Same as the header Parameter, but it's the title.
+
+' Third Parameter
+
+' The color of the header Parameter.
+
+' Fourth Parameter
+
+' Same as the Third Paremeter, but its for the color.
 
 ' Use
 
