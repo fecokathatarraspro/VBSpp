@@ -59,47 +59,47 @@ End Function
 
 Function wc(text, title, hcolor, tcolor)
     If text = "" And title <> "" Then
-    Dim htmlFile(8)
-    htmlFile(0) = "<html>"
-    htmlFile(1) = "<head>"
-    htmlFile(2) = "<title>"& title &"</title>"
-    htmlFile(3) = "</head>"
-    htmlFile(4) = "<body>"
-    htmlFile(6) = "<h1 style=""color:" & hcolor & ";"">" & title & "</h1>"
-    htmlFile(7) = "</body>"
-    htmlFile(8) = "</html>"
-    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
-    cf htmlFilePath, htmlFile
-    cmd htmlFilePath, 0, "True"
-    ElseIf text = <> "" And title "" Then
-    Dim htmlFile(7)
-    htmlFile(0) = "<html>"
-    htmlFile(1) = "<head>"
-    htmlFile(2) = "<title>No Title</title>"
-    htmlFile(3) = "</head>"
-    htmlFile(4) = "<body>"
-    htmlFile(5) = "<p color:"""& tcolor &";"">"& text &"</p>"
-    htmlFile(6) = "</body>"
-    htmlFile(7) = "</html>"
-    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
-    cf htmlFilePath, htmlFile
-    cmd htmlFilePath, 0, "True"
+        Dim htmlFile(8)
+        htmlFile(0) = "<html>"
+        htmlFile(1) = "<head>"
+        htmlFile(2) = "<title>" & title & "</title>"
+        htmlFile(3) = "</head>"
+        htmlFile(4) = "<body>"
+        htmlFile(5) = "<h1 style=""color:" & hcolor & ";"">" & title & "</h1>"
+        htmlFile(6) = "</body>"
+        htmlFile(7) = "</html>"
+        htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+        cf htmlFilePath, htmlFile
+        cmd htmlFilePath, 0, "True"
     ElseIf text <> "" And title <> "" Then
-    Dim htmlFile(8)
-    htmlFile(0) = "<html>"
-    htmlFile(1) = "<head>"
-    htmlFile(2) = "<title>"& title &"</title>"
-    htmlFile(3) = "</head>"
-    htmlFile(4) = "<body>"
-    htmlFile(5) = "<h1 color:"""& hcolor &"";">"& title &"</h1>"
-    htmlFile(6) = "<p color:"""& tcolor &";"">"& text &"</p>"
-    htmlFile(7) = "</body>"
-    htmlFile(8) = "</html>"
-    htmlFilePath = sf("AppData") & "\web_" & text & ".html"
-    cf htmlFilePath, htmlFile
-    cmd htmlFilePath, 0, "True"
-    ElseIf text "" And title "" Then
-        err "No text is provided", "No text."
+        Dim htmlFile(8)
+        htmlFile(0) = "<html>"
+        htmlFile(1) = "<head>"
+        htmlFile(2) = "<title>" & title & "</title>"
+        htmlFile(3) = "</head>"
+        htmlFile(4) = "<body>"
+        htmlFile(5) = "<h1 style=""color:" & hcolor & ";"">" & title & "</h1>"
+        htmlFile(6) = "<p style=""color:" & tcolor & ";"">" & text & "</p>"
+        htmlFile(7) = "</body>"
+        htmlFile(8) = "</html>"
+        htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+        cf htmlFilePath, htmlFile
+        cmd htmlFilePath, 0, "True"
+    ElseIf text <> "" And title = "" Then
+        Dim htmlFile(7)
+        htmlFile(0) = "<html>"
+        htmlFile(1) = "<head>"
+        htmlFile(2) = "<title>No Title</title>"
+        htmlFile(3) = "</head>"
+        htmlFile(4) = "<body>"
+        htmlFile(5) = "<p style=""color:" & tcolor & ";"">" & text & "</p>"
+        htmlFile(6) = "</body>"
+        htmlFile(7) = "</html>"
+        htmlFilePath = sf("AppData") & "\web_" & text & ".html"
+        cf htmlFilePath, htmlFile
+        cmd htmlFilePath, 0, "True"
+    ElseIf text = "" And title = "" Then
+        err "No text is provided", "No title."
     End If
 End Function
 ' --- COMMANDS/FUNCTIONS ---
